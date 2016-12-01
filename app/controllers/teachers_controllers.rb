@@ -7,7 +7,7 @@ post '/teachers' do
   @teacher = Teacher.new(params[:teacher])
   if @teacher.save
     session[:id] = @teacher.id
-    redirect "/teachers/#{@teacher.id}"
+    redirect "/"
   else
     # @errors = @teacher.errors.full_messages
     erb :'teachers/new'

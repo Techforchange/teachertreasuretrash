@@ -1,6 +1,6 @@
 <h2>Welcome, <%=@teacher.name%></h2>
-<form class="resource-form" action="/resources/" method="post">
-    <input type="text" name="resource[name]" placeholder="Item Name">
-  <input type="text" name="reosurce[description]" placeholder="Description">
-  <input type="submit" value="Give this to a teacher in need!">
-</form>
+Here are your resource links:
+<% @teacher.resources.each do |resource| %>
+  <!-- resource link -->
+  <!-- <a href="categories//resources/<%=resource.id%>/edit">Register</a> -->
+<% end %>
