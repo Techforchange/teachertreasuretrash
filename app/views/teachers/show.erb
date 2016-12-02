@@ -1,6 +1,6 @@
 <h2>Welcome, <%=@teacher.name%></h2>
 Here are your resource links:
-<% @teacher.resources.each do |resource| %>
-  <!-- resource link -->
-  <!-- <a href="categories//resources/<%=resource.id%>/edit">Register</a> -->
+<% @teacher.given_resources.each do |resource| %>
+  <br><a href="/categories/<%=resource.category_id%>/resources/<%=resource.id%>"><%=resource.name%></a>
+  <br><a href="/categories/<%=resource.category_id%>/resources/<%=resource.id%>/edit">Edit</a>
 <% end %>

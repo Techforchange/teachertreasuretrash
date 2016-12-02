@@ -1,6 +1,6 @@
 class Teacher < ActiveRecord::Base
-  has_many :resources, foreign_key: :giver_id
-  has_many :resources, foreign_key: :receiver_id
+  has_many :given_resources, foreign_key: :giver_id, class_name: "Resource"
+  has_many :received_resources, foreign_key: :receiver_id, class_name: "Resource"
 
   validates_presence_of :name
   validates_uniqueness_of :name

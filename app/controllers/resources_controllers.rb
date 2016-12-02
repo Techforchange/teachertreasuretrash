@@ -17,7 +17,8 @@ end
 
 get '/categories/:category_id/resources/:id' do
   @category = Category.find(params[:category_id])
-  @resources = @category.resources
+  @resource = Resource.find(params[:id])
+  erb :"/resources/show"
   #one specific resource
 end
 
