@@ -1,0 +1,7 @@
+<h3>Your "trash" is another teacher's <b>TREASURE</b></h3>
+<h4>Edit form</h4>
+<form action="/categories/<%=@category.id%>/resources/<%=@resource.id%>" method="POST" class="new-resource-form">
+  <input type="text" name="resource[name]" placeholder="type of resource">
+  <input type="text" name="resource[description]" placeholder="Describe the resource">
+  <input type="submit" value="Make a difference!">
+</form>

@@ -1,0 +1,17 @@
+<h1> <%=@category.subject%> Resources</h1><br>
+<% if @resources %>
+  <% @resources.each do |resource|%>
+  <div class="Resource-info">
+    <b>Type:</b> <%= resource.name %>
+    <b>Description:</b> <%= resource.description %><br>
+    <b>Giving Teacher:</b> <%= resource.giver.name %><br>
+    <b>Pickup Address:</b> <%= resource.giver.address %><br>
+    <br><br>
+  </div>
+  <% end %>
+<% end %>
+
+<div class="resource-buttons">
+    <br><a class="button"
+    href="/categories/<%=@category.id%>/resources/new">Add a new resource</a>
+</div>

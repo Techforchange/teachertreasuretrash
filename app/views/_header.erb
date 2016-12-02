@@ -1,0 +1,15 @@
+<% if current_teacher %>
+<form action="/sessions" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Logout">
+</form>
+  <a href="/teachers/<%=current_teacher.id%>">My Profile</a>
+  <a href="/categories">Homepage</a>
+<% else %>
+<p>
+  <h4>TTT logo</h4>
+  <a href="/sessions/new">Login</a>
+  <a href="/teachers/new">Register</a>
+</p>
+
+<% end %>
