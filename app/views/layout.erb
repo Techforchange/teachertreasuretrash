@@ -10,6 +10,8 @@
   <!--
     application.css is where you put your styles
   -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+
   <link rel="stylesheet" href="/css/application.css">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -18,9 +20,11 @@
   <title></title>
 </head>
 <body>
+  <div class="container">
   <header>
     <%= erb :'_header' %>
   </header>
   <%= yield %>
+  </div>
 </body>
 </html>

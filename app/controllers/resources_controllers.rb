@@ -1,6 +1,7 @@
-get '/resources' do
-  #show all resources
-  erb :'/'
+get 'categories/:category_id/resources' do
+  @category = Category.find(params[:category_id])
+  @resources = @category.resources
+   redirect :"/categories/#{category.id}"
 end
 
 get '/resources/:id' do

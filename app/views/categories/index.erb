@@ -1,4 +1,9 @@
-<h1>All Categories!</h1>
+<div>
+  <br><h1>All Categories!</h1>
+</div>
 
-<% @categories.each do |category| %>
-<% end %>
+<div class="category-buttons">
+  <% @categories.each do |category| %>
+    <br><a class="button" href="/categories/<%=category.id%>"><%=category.subject%></a>
+  <% end %>
+</div>

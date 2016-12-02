@@ -5,5 +5,6 @@ get '/categories' do
 end
 
 get '/categories/:id' do
-  #displays one specific category
+  @category = Category.find(params[:id])
+  erb :'categories/show'
 end

@@ -1,0 +1,7 @@
+math = Category.create(subject:"Math")
+english = Category.create(subject:"English")
+science = Category.create(subject:"Science")
+history = Category.create(subject:"History")
+foreign_language = Category.create(subject:"Foreign Language")
+classroom_furniture = Category.create(subject:"Classroom Furniture")
+other = Category.create(subject:"Other")

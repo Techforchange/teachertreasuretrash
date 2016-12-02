@@ -1,0 +1,9 @@
+<h1> <%=@category.subject%> Resources</h1><br>
+<% if @resources %>
+  <% @resources.each do |resource|%>
+    Type: <%= resource.name %>
+    Description: <%= resource.description %>
+    Giving Teacher:<%= resource.giver_id.name %>
+    Pickup Address:<%= resource.giver_id.address %>
+  <% end %>
+<% end %>

@@ -4,7 +4,8 @@ class CreateResources < ActiveRecord::Migration
       t.string :name
       t.integer :receiver_id
       t.integer :giver_id
-
+      t.integer :category_id
+      
       t.text :description
 
       t.timestamps
