@@ -1,7 +1,7 @@
 get '/categories/:category_id/resources' do
   @category = Category.find(params[:category_id])
   @resources = @category.resources
-   redirect :"/categories/#{category.id}"
+   redirect :"/categories/#{@category.id}"
 end
 
 get '/categories/:category_id/resources/new' do
@@ -11,8 +11,16 @@ end
 
 post '/categories/:category_id/resources' do
   @category = Category.find(params[:category_id])
-
-  #adds new resource
+  @resource = Resource.new(params[:resource])
+  @current_teacher = Teacher.find(session[:id])
+  @resource.giver_id = @current_teacher.id
+  @resource.category_id = @category.id
+  # @resource.add_info
+    if @resource.save
+      redirect :"/categories/#{@category.id}/resources"
+    else
+      erb :"/categories/#{@category.id}/resources/new"
+    end
 end
 
 get '/categories/:category_id/resources/:id' do
