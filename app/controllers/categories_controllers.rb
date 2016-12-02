@@ -1,6 +1,7 @@
 get '/categories' do
-  #displays all categories
-  erb '/'
+  @teacher = current_teacher
+  @categories = Category.all
+  erb :'/categories/index'
 end
 
 get '/categories/:id' do
