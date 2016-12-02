@@ -3,12 +3,16 @@ get '/sessions/new' do
 end
 
 post '/sessions' do
-  @teacher = Teacher.find_by_email(params[:email])
-  if @teacher && @teacher.password == params[:password]
+  p params
+  "hello"
+  @teacher = Teacher.find_by(email: params[:email])
+  if @teacher && @teacher.authenticate?(params[:email], params[:password])
+    p "succeeded"
     login(@teacher)
     redirect '/'
   else
-    @errors = "Try again!"
+    p "failed"
+    # @errors = "Try again!"
     erb :'sessions/new'
   end
 end
